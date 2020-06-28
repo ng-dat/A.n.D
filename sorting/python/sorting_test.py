@@ -21,45 +21,45 @@ class TestSortingMethods(unittest.TestCase):
 
     def testNormalArrayInput(self):
         arr = [0, 4, 2, 3, 1]
-        expectedArr = [0, 1, 2, 3, 4]
-        sortedArr = self._sortFunc(arr)
-        self.assertEqual(sortedArr, expectedArr)
+        expected_arr = [0, 1, 2, 3, 4]
+        sorted_arr = self._sortFunc(arr)
+        self.assertEqual(sorted_arr, expected_arr)
 
     def testEmptyArrayInput(self):
         arr = []
-        expectedArr = []
-        sortedArr = self._sortFunc(arr)
-        self.assertEqual(sortedArr, expectedArr)
+        expected_arr = []
+        sorted_arr = self._sortFunc(arr)
+        self.assertEqual(sorted_arr, expected_arr)
 
     def testSingleElementArrayInput(self):
         arr = [1]
-        expectedArr = [1]
-        sortedArr = self._sortFunc(arr)
-        self.assertEqual(sortedArr, expectedArr)
+        expected_arr = [1]
+        sorted_arr = self._sortFunc(arr)
+        self.assertEqual(sorted_arr, expected_arr)
 
     def testSortedArrayInput(self):
         arr = [1, 2, 4, 8]
-        expectedArr = [1, 2, 4, 8]
-        sortedArr = self._sortFunc(arr)
-        self.assertEqual(sortedArr, expectedArr)
+        expected_arr = [1, 2, 4, 8]
+        sorted_arr = self._sortFunc(arr)
+        self.assertEqual(sorted_arr, expected_arr)
 
     def testReverselySortedArrayInput(self):
         arr = [8, 4, 2, 1]
-        expectedArr = [1, 2, 4, 8]
-        sortedArr = self._sortFunc(arr)
-        self.assertEqual(sortedArr, expectedArr)
+        expected_arr = [1, 2, 4, 8]
+        sorted_arr = self._sortFunc(arr)
+        self.assertEqual(sorted_arr, expected_arr)
 
     def testRepeatedElementsArrayInput(self):
         arr = [1, 1, 1, 1]
-        expectedArr = [1, 1, 1, 1]
-        sortedArr = self._sortFunc(arr)
-        self.assertEqual(sortedArr, expectedArr)
+        expected_arr = [1, 1, 1, 1]
+        sorted_arr = self._sortFunc(arr)
+        self.assertEqual(sorted_arr, expected_arr)
 
     def testDuplicatedElementsArrayInput(self):
         arr = [8, 1, 4, 1]
-        expectedArr = [1, 1, 4, 8]
-        sortedArr = self._sortFunc(arr)
-        self.assertEqual(sortedArr, expectedArr)
+        expected_arr = [1, 1, 4, 8]
+        sorted_arr = self._sortFunc(arr)
+        self.assertEqual(sorted_arr, expected_arr)
 
 
 def normalSort(arr):
@@ -69,7 +69,8 @@ def normalSort(arr):
                 arr[i], arr[j] = arr[j], arr[i]
     return arr
 
-sortFuncs = {
+
+sort_funcs = {
     'test': normalSort,
     'bubble': bubble_sort.sort,
     'heap': heap_sort.sort,
@@ -81,7 +82,7 @@ sortFuncs = {
 }
 
 if __name__ == '__main__':
-    sortTypeCode = 'bubble' if (not sys.argv or len(sys.argv) != 2 or sys.argv[1] == None) else str(sys.argv[1])
-    sortFunc = sortFuncs[sortTypeCode]
+    sort_type_code = 'bubble' if (not sys.argv or len(sys.argv) != 2 or sys.argv[1] is None) else str(sys.argv[1])
+    sortFunc = sort_funcs[sort_type_code]
 
     unittest.main(argv=[sys.argv[0]])

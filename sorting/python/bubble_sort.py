@@ -1,7 +1,7 @@
 def sort(array):
-    for sortedSize in range(0, len(array) - 1):
+    for sorted_size in range(0, len(array) - 1):
         swapped = False
-        for i in range(0, len(array) - 1 - sortedSize):
+        for i in range(0, len(array) - 1 - sorted_size):
             if array[i] > array[i + 1]:
                 array[i], array[i + 1] = array[i + 1], array[i]
                 swapped = True

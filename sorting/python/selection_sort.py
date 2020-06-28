@@ -1,8 +1,8 @@
 def sort(array):
-    for sortedSize in range(len(array) - 1):
-        minValueIndex = sortedSize
-        for i in range(sortedSize, len(array)):
-            if array[i] < array[minValueIndex]:
-                minValueIndex = i
-        array[sortedSize], array[minValueIndex] = array[minValueIndex], array[sortedSize]
+    for sorted_size in range(len(array) - 1):
+        min_value_index = sorted_size
+        for i in range(sorted_size, len(array)):
+            if array[i] < array[min_value_index]:
+                min_value_index = i
+        array[sorted_size], array[min_value_index] = array[min_value_index], array[sorted_size]
     return array

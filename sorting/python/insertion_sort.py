@@ -1,13 +1,13 @@
 def sort(array):
-    for sortedSize in range(len(array)):
-        insertedValue = array[sortedSize]
-        indexToInsert = sortedSize - 1
-        while indexToInsert >= 0:
-            if array[indexToInsert] > insertedValue:
-                array[indexToInsert + 1] = array[indexToInsert]
+    for sorted_size in range(len(array)):
+        inserted_value = array[sorted_size]
+        index_to_insert = sorted_size - 1
+        while index_to_insert >= 0:
+            if array[index_to_insert] > inserted_value:
+                array[index_to_insert + 1] = array[index_to_insert]
             else:
                 break
-            indexToInsert -= 1
-        indexToInsert += 1
-        array[indexToInsert] = insertedValue
+            index_to_insert -= 1
+        index_to_insert += 1
+        array[index_to_insert] = inserted_value
     return array

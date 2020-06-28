@@ -1,21 +1,22 @@
 def sort(array):
-    def _merge(leftArray, rightArray):
+
+    def _merge(left_array, right_array):
         array = []
-        while leftArray and rightArray:
-            if leftArray[0] < rightArray[0]:
-                array.append(leftArray.pop(0))
+        while left_array and right_array:
+            if left_array[0] < right_array[0]:
+                array.append(left_array.pop(0))
             else:
-                array.append(rightArray.pop(0))
-        array.extend(leftArray)
-        array.extend(rightArray)
+                array.append(right_array.pop(0))
+        array.extend(left_array)
+        array.extend(right_array)
         return array
 
     if len(array) <= 1:
         return array
 
-    midIndex = int((len(array) + 1) / 2)
+    mid_index = int((len(array) + 1) / 2)
 
-    leftArray = sort(array[:midIndex])
-    rightArray = sort(array[midIndex:])
+    left_array = sort(array[:mid_index])
+    right_array = sort(array[mid_index:])
 
-    return _merge(leftArray, rightArray)
+    return _merge(left_array, right_array)
